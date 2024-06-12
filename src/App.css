@@ -1,0 +1,22 @@
+body{
+    scroll-behavior: smooth;
+    transition: .3s ease;
+}
+
+
+.main-app.light-mode {
+  background-color: #f2f5f9;
+  transition: .7s ease;
+
+}
+.main-app.dark-mode{
+    background-color: #000000;
+    transition: .7s ease;
+
+}
+.dark-button {
+  box-shadow: 16px 16px 48px #c5c5c5, -16px -16px 48px #EBF2FA;
+}
+.dark-button.active-dark{
+    box-shadow: none;
+}
