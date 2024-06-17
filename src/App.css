@@ -5,6 +5,9 @@ body {
   scroll-behavior: smooth;
   transition: 0.3s ease;
 }
+html {
+  font-size: 16px;
+}
 h1,
 h2,
 h3,
@@ -16,6 +19,7 @@ h6 {
 }
 p,
 span,
+a,
 .para,
 .subtitle,
 .caption {

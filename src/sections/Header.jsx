@@ -12,7 +12,7 @@ function Header({ mood, toggleMood }) {
     <>
       <header className="w-full h-auto py-5">
         <nav className="container flex items-center justify-between">
-          <button className={` sm:hidden ham-menu flex items-center justify-center `}>
+          <button className={` md:hidden ham-menu flex items-center justify-center `}>
             <svg 
               width="40"
               height="40"
@@ -29,7 +29,7 @@ function Header({ mood, toggleMood }) {
               />
             </svg>
           </button>
-          <div className="name-box w-[6.25rem] h-auto sm:w-full ">
+          <div className="name-box w-[6.25rem] h-auto sm:w-auto ">
             <img
               src={mood ? WhiteName : Name}
               alt={mood ? "white name" : "name"}
