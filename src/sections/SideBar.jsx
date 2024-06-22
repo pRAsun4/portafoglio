@@ -1,18 +1,15 @@
-import { Link } from "react-router-dom";
-import Facebook from "../assets/facebook-icon.svg";
-import Github from "../assets/github-icon.svg";
-import Linkedln from "../assets/linkedln-icon.svg";
-import Twitter from "../assets/twitter-icon.svg";
-import Mobile from "../assets/mobile-icon.png";
-
-
-
+import Resume from "/updated-resume.pdf";
+import Download from '../assets/download-icon.png'
+import ContactLinks from "../components/ContactLinks";
+import ContactDetails from "../ContactDetails";
+import SocialDetails from "../SocialDetails";
+import SocialLinks from "../components/SocialLinks";
 
 export default function SideBar() {
   return (
-    <div className=" w-full flex flex-col items-center justify-center md:col-span-4 h-dvh relative  ">
-      <div className="img-box absolute top-0 w-[12.5rem] h-[12.5rem] rounded-[1.25rem] bg-purple-500 border "></div>
-      <div className="side-content-box w-full h-full mt-[6.5rem] rounded-[1.25rem] pt-[7.125rem] bg-[#fff] border ">
+    <div className=" w-full flex flex-col items-center justify-center md:col-span-4 h-auto relative  ">
+      <div className="img-box absolute top-0 w-[12.5rem] h-[12.5rem] rounded-[1.25rem] bg-purple-500  "></div>
+      <div className="side-content-box w-full h-full mt-[6.5rem] rounded-[1.25rem] pt-[7.125rem] pb-[3.75rem] bg-[#fff] overflow-hidden  ">
         <div className="name-box w-full flex flex-col ">
           <h2 className="text-[#0B0909] md:text-[1.75rem] font-bold text-center ">
             Prasun Mondal
@@ -22,27 +19,33 @@ export default function SideBar() {
           </p>
         </div>
         <div className="icon-box w-full flex items-center justify-center mt-3 gap-[0.5625rem]">
-          <Link  to='#'  className="box flex items-center justify-center lg:w-[3.75rem] lg:h-[3.75rem] w-[2.75rem] h-[2.75rem] rounded-[0.5625rem] bg-[#F2F7FC] "> 
-            <img src={Facebook} alt="facebook" className="" />
-          </Link>
-          <Link to='#'  className="box flex items-center justify-center lg:w-[3.75rem] lg:h-[3.75rem] w-[2.75rem] h-[2.75rem] rounded-[0.5625rem] bg-[#F2F7FC] "> 
-            <img src={Linkedln} alt="linkedln" className="" />
-          </Link>
-          <Link to='#'  className="box flex items-center justify-center lg:w-[3.75rem] lg:h-[3.75rem] w-[2.75rem] h-[2.75rem] rounded-[0.5625rem] bg-[#F2F7FC] "> 
-            <img src={Twitter} alt="twitter" className="" />
-          </Link>
-          <Link  to='#' className="box flex items-center justify-center lg:w-[3.75rem] lg:h-[3.75rem] w-[2.75rem] h-[2.75rem] rounded-[0.5625rem] bg-[#F2F7FC] "> 
-            <img src={Github} alt="github" className="" />
-          </Link>
+          {SocialDetails.map((contact, index) =>(
+            <SocialLinks 
+              key={index}
+              toLink={contact.toLink}
+              imgSrc={contact.imgSrc}
+              imgAlt={contact.imgAlt}
+            />
+          ))}
+
         </div>
         <div className="details-box w-full lg:p-[1.5rem] px-5 gap-4   bg-[#fff] ">
-            <div className="w-full flex flex-col py-[2.0625rem] px-[1.5rem]  rounded-[1.25rem] bg-[#F2F5F9] ">
-                <a href='tel:8100698184' className="w-full flex items-start justify-center font-semibold text-[14px] ">
-                    <img src={Mobile} alt="mobile logo" />
-                    Phone<br/>
-                    <span className="text-[#2e2e2e] leading-[120%] ">8100698184</span>
-                </a>
-            </div>
+          <div className="w-full flex flex-col py-[2.0625rem] px-[1.5rem]  rounded-[1.25rem] bg-[#F2F5F9] ">
+            {ContactDetails.map((contact, index) => (
+              <ContactLinks
+                key={index}
+                logoSrc={contact.logoSrc}
+                logoAlt={contact.logoAlt}
+                logoLable={contact.logoLable}
+                logoText={contact.logoText}
+              />
+            ))}
+
+            <a href={Resume} download="updated-resume.pdf" className="flex download-button  justify-center items-center lg:max-w-[12.25rem] mx-auto  mt-[1.25rem] lg:px-[1.25rem] lg:py-[0.625rem] rounded-[1.25rem] ">
+              <img src={Download} alt="download icon" />
+              <p className="text-[#fff] max-w-full text-[0.875rem]  "> Download resume</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>

@@ -42,3 +42,18 @@ a,
 .dark-button.active-dark {
   box-shadow: none;
 }
+
+a.contact-link {
+  border-bottom: 1px solid #cdcdcd;
+}
+a.contact-link:first-of-type {
+  padding-top: 0;
+}
+a.download-button {
+  background: rgb(255, 156, 26);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
+}
