@@ -8,18 +8,21 @@ const ContactDetails = [
     logoAlt: "mobile logo",
     logoLable: "Phone",
     logoText: "8100698184",
+    type: "phone"
   },
   {
     logoSrc: Email,
     logoAlt: "email logo",
     logoLable: "Email",
     logoText: "prasun0403.pm@gmail.com",
+    type: "mail"
   },
   {
     logoSrc: Location,
     logoAlt: "location logo",
     logoLable: "Location",
     logoText: "kolkata,WB,India",
+    type: "location"
   },
 
 ];

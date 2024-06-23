@@ -4,11 +4,14 @@ import ContactLinks from "../components/ContactLinks";
 import ContactDetails from "../ContactDetails";
 import SocialDetails from "../SocialDetails";
 import SocialLinks from "../components/SocialLinks";
+// import Picture from '../assets/profile-pic.jpg'
 
 export default function SideBar() {
   return (
-    <div className=" w-full flex flex-col items-center justify-center md:col-span-4 h-auto relative  ">
-      <div className="img-box absolute top-0 w-[12.5rem] h-[12.5rem] rounded-[1.25rem] bg-purple-500  "></div>
+    <div className=" w-full  flex-col items-center justify-center md:col-span-4 md:flex hidden h-auto relative  ">
+      <div className="img-box absolute top-0 w-[12.5rem] h-[12.5rem] rounded-[1.25rem] bg-purple-500 overflow-hidden ">
+        {/* <img src={Picture} alt="" className="w-full h-full object-cover " /> */}
+      </div>
       <div className="side-content-box w-full h-full mt-[6.5rem] rounded-[1.25rem] pt-[7.125rem] pb-[3.75rem] bg-[#fff] overflow-hidden  ">
         <div className="name-box w-full flex flex-col ">
           <h2 className="text-[#0B0909] md:text-[1.75rem] font-bold text-center ">
@@ -38,6 +41,7 @@ export default function SideBar() {
                 logoAlt={contact.logoAlt}
                 logoLable={contact.logoLable}
                 logoText={contact.logoText}
+                type={contact.type}
               />
             ))}
 
