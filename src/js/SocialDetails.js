@@ -1,7 +1,7 @@
-import Facebook from "./assets/facebook-icon.svg";
-import Github from "./assets/github-icon.svg";
-import Linkedln from "./assets/linkedln-icon.svg";
-import Twitter from "./assets/twitter-icon.svg";
+import Facebook from "../assets/facebook-icon.svg";
+import Github from "../assets/github-icon.svg";
+import Linkedln from "../assets/linkedln-icon.svg";
+import Twitter from "../assets/twitter-icon.svg";
 
 const SocialDetails = [
   {

@@ -1,6 +1,6 @@
-import Mobile from "./assets/mobile-icon.png";
-import Email from "./assets/mail-icon.png";
-import Location from "./assets/location-icon.png";
+import Mobile from "../assets/mobile-icon.png";
+import Email from "../assets/mail-icon.png";
+import Location from "../assets/location-icon.png";
 
 const ContactDetails = [
   {
