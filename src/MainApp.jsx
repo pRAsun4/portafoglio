@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import Header from "./sections/Header";
 import SideBar from "./sections/SideBar";
 import ButtonBar from "./sections/ButtonBar";
+import TempSection from "./sections/TempSection";
 
 export default function MainApp() {
     const [mood, setMood] = useState(() => {
