@@ -8,7 +8,7 @@ function ContactLinks({ logoSrc, logoAlt, logoLable, logoText, type }) {
       href = `tel:${logoText}`;
       break;
     case "mail":
-      href = `mailto:${logoText}`;
+    href = `mailto:${logoText}`;
       break;
     case "location":
       href = { logoText };
