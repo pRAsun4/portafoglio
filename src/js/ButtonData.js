@@ -1,23 +1,23 @@
-import Home from "../assets/home-icon.svg";
-import Resume from "../assets/resume-icon.svg";
-import Work from "../assets/work-icon.svg";
-import Contact from "../assets/contact-icon.svg";
+import HomeIcon from "../assets/svg/HomeIcon";
+import ResumeIcon from "../assets/svg/ResumeIcon";
+import WorkIcon from "../assets/svg/WorkIcon";
+import ContactIcon from "../assets/svg/ContactIcon";
 
 const ButtonData = [
   {
-    buttonLogo: Home,
+    buttonLogo: <HomeIcon />,
     buttonText: "Home",
   },
   {
-    buttonLogo: Resume,
+    buttonLogo: <ResumeIcon />,
     buttonText: "Resume",
   },
   {
-    buttonLogo: Work,
+    buttonLogo: <WorkIcon />,
     buttonText: "Work",
   },
   {
-    buttonLogo: Contact,
+    buttonLogo: <ContactIcon />,
     buttonText: "Contact",
   },
 ];
