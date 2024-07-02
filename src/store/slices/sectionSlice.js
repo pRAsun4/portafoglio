@@ -9,7 +9,7 @@ const sectionSlice = createSlice({
     name: 'section',
     initialState,
     reducers:{
-        setActiveSection:(state, action) => {
+        setActiveSection(state, action) {
             state.avtiveSection = action.payload.section;
             state.activeButton = action.payload.buttonIndex;
         },

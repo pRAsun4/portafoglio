@@ -66,6 +66,10 @@ button.btn-gradient{
     rgba(232, 5, 5, 1) 100%
   );
 }
+button.btn-gradient svg path, button.btn-gradient p{
+  fill: #F2F7FC;
+  color: #F2F7FC;
+}
 button.btn-normal{
   background-color: #E1E8EF;
 }
