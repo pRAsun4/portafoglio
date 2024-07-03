@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import CodeIcon from "../assets/svg/CodeIcon";
+import ButtonData from "../js/ButtonData";
+import SmallCard from "./SmallCard";
 
 function AboutSection({ mood }) {
   return (
@@ -34,15 +36,15 @@ function AboutSection({ mood }) {
         >
           What I do!
         </h2>
-        <div className="about-grid-main grid grid-cols-12  w-full h-full border">
-            <div className="small-cards lg:col-span-6 col-span-1  flex flex-col py-[0.625rem] px-[0.75rem] rounded-[0.625rem]">
-              <h3 className=" lg:text-[1.25rem] text-[1.125rem] text-[#000000] flex relative">
-                <span>
-                  {<CodeIcon/>}
-                </span>
-                Web Development
-              </h3>
-            </div>
+        <div className="about-grid-main grid grid-cols-12 lg:gap-x-[1.25rem] lg:gap-y-[1.25rem]  w-full h-full border">
+          {ButtonData.map((data, index) => (
+            <SmallCard
+              key={index}
+              cardIcon={data.cardIcon}
+              cardHeader={data.cardHeader}
+              cardPara={data.cardPara}
+            />
+          ))}
         </div>
       </div>
     </div>
