@@ -73,3 +73,18 @@ button.btn-gradient svg path, button.btn-gradient p{
 button.btn-normal{
   background-color: #E1E8EF;
 }
+
+.before-header::after{
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 252px;
+  background: rgb(255, 156, 26);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
+  top: 2rem;
+  right: 8rem;
+}

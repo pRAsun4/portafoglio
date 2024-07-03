@@ -6,7 +6,7 @@ import { setActiveSection } from "../store/slices/sectionSlice";
 import AboutSection from "../components/AboutSection";
 import ResumeSection from "../components/ResumeSection";
 
-function ButtonBar() {
+function ButtonBar({mood}) {
   const dispatch = useDispatch();
   const activeButton = useSelector((state) => state.section.activeButton);
   const activeSection = useSelector((state) => state.section.activeSection);
@@ -15,7 +15,7 @@ function ButtonBar() {
     console.log("Rendering section:", activeSection); // Debugging log
     switch (activeSection) {
       case 1:
-        return <AboutSection />;
+        return <AboutSection mood={mood} />;
       case 2:
         return <ResumeSection />;
       default:
@@ -23,9 +23,7 @@ function ButtonBar() {
     }
   };
 
-  const handleButtonClick = (index, section) => {
-    console.log("Button clicked, index:", index); // Debugging log
-    console.log("Button clicked, section:", section); // Debugging log
+  const handleButtonClick = (index) => {
     dispatch(setActiveSection({ section: index + 1, buttonIndex: index }));
   };
 

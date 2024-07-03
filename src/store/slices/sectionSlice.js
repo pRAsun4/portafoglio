@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    avtiveSection: 1,
+    activeSection: 1,
     activeButton:0,
 };
 
@@ -10,7 +10,7 @@ const sectionSlice = createSlice({
     initialState,
     reducers:{
         setActiveSection(state, action) {
-            state.avtiveSection = action.payload.section;
+            state.activeSection = action.payload.section;
             state.activeButton = action.payload.buttonIndex;
         },
     },

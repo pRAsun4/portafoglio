@@ -28,7 +28,7 @@ export default function MainApp() {
             <Header mood={mood} toggleMood={toggleMood} />
             <main className=" sm:mt-10 mt-5 w-full h-full wrapper-main grid grid-cols-12 container border ">
                 <SideBar/>
-                <ButtonBar/>
+                <ButtonBar mood={mood}/>
             </main>
         </div>
     );
