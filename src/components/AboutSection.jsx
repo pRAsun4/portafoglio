@@ -11,7 +11,7 @@ function AboutSection({ mood }) {
       className={`about-sections w-full h-auto flex flex-col justify-start 
         ${
           mood ? "bg-[#2e2e2e]" : "bg-white"
-        } py-[2.25rem] px-[3rem] rounded-[1.25rem] gap-y-[1rem]`}
+        } py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5 rounded-[1.25rem] gap-y-[1rem]`}
     >
       <div className="header relative">
         <h2
@@ -38,7 +38,7 @@ function AboutSection({ mood }) {
         >
           What I do!
         </h2>
-        <div className="about-grid-main grid grid-cols-12 lg:gap-x-[1.25rem] lg:gap-y-[1.25rem] w-full h-full ">
+        <div className="about-grid-main grid grid-cols-12 lg:gap-x-[1.25rem] lg:gap-y-[1.25rem] gap-y-5 w-full h-full ">
           {BoxData.map((data, index) => (
             <SmallCard
               key={index}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function SmallCard({ mood, cardLogo, cardHeader, cardPara }) {
   return (
-    <div className="small-cards lg:col-span-6 col-span-1 flex flex-col py-[0.625rem] px-[0.75rem] rounded-[0.625rem] gap-y-[0.625rem] ">
+    <div className="small-cards lg:col-span-6 col-span-12 flex flex-col py-[0.625rem] px-[0.75rem] rounded-[0.625rem] gap-y-[0.625rem] ">
       <h3 className={`lg:text-[1.25rem] text-[1.125rem]   flex items-center relative`}>
         <span className="mr-3">{cardLogo}</span>
         {cardHeader}

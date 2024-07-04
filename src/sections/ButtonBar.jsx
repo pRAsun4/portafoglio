@@ -27,8 +27,8 @@ function ButtonBar({mood}) {
   };
 
   return (
-    <div className="w-full flex flex-col md:pl-[1.25rem] md:col-span-8 border">
-      <div className="button-wrapper mb-3 md:max-w-[31.875rem] max-w-full w-full h-auto md:gap-x-[2.5rem] flex items-center justify-between md:relative absolute bottom-0 right-0 self-end py-[10px] px-8 rounded-[1.25rem] border">
+    <div className="button-bar w-full flex flex-col md:pl-[1.25rem] md:col-span-8 border">
+      <div className="button-wrapper mb-3 md:max-w-[31.875rem] max-w-full w-full h-auto lg:gap-x-[2.5rem] sm:gap-x-[1.5rem] gap-0 flex items-center justify-between md:relative fixed bottom-0 right-0 self-end py-[10px] px-8 rounded-[1.25rem] z-20 border">
         {buttonData.map((btn, index) => (
           <ButtonDetails
             key={index}
