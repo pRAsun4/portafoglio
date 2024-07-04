@@ -88,3 +88,10 @@ button.btn-normal{
   top: 2rem;
   right: 8rem;
 }
+
+div.small-cards{
+  background-color: #F2F7FC;
+}
+div.small-cards:nth-child(1), div.small-cards:nth-child(4){
+  background-color: #FFEBD1;
+}

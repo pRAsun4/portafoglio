@@ -12,7 +12,6 @@ function ButtonBar({mood}) {
   const activeSection = useSelector((state) => state.section.activeSection);
 
   const renderSection = () => {
-    console.log("Rendering section:", activeSection); // Debugging log
     switch (activeSection) {
       case 1:
         return <AboutSection mood={mood} />;
