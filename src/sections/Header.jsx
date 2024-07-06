@@ -6,13 +6,21 @@ import WhiteName from "../assets/name-white.png";
 import Moon from "../assets/half-moon.svg";
 import Sun from "../assets/sun-icon.svg";
 import '../assets/css/Header.css'
+import { useDispatch } from "react-redux";
+import { toggleActiveSidebar } from "../store/slices/sidebarSlice";
 
 function Header({ mood, toggleMood }) {
+  const dispatch = useDispatch();
+
+  const  handleToggleSideBar = (sidebarName) =>{
+    console.log(sidebarName);
+    dispatch(toggleActiveSidebar(sidebarName));
+  }
   return (
     <>
       <header className="w-full h-auto py-5">
         <nav className="container flex items-center justify-between">
-          <button className={` md:hidden ham-menu flex items-center justify-center `}>
+          <button className={` md:hidden ham-menu flex items-center justify-center `} onClick={()=>handleToggleSideBar('activeSidebar')}>
             <svg 
               width="40"
               height="40"

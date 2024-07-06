@@ -1,7 +1,6 @@
 // AboutSection.jsx
 import React from "react";
 import PropTypes from "prop-types";
-import ButtonData from "../js/ButtonData";
 import SmallCard from "./SmallCard";
 import BoxData from "../js/BoxData";
 
@@ -15,11 +14,12 @@ function AboutSection({ mood }) {
     >
       <div className="header relative">
         <h2
-          className={`before-header ${
+          className={`before-heade ${
             mood ? "text-[#fff]" : "text-[#0B0909]"
-          } text-left xl:text-[2.5rem] text-[1.5rem] font-medium relative`}
+          } text-left xl:text-[2.5rem] sm:text-[1.5rem] text-[1.2rem] font-medium relative flex items-center`}
         >
           ABOUT ME
+          <span className="header-line lg:max-w-[15.625rem] md:max-w-[12rem] sm:max-w-[10rem] max-w-[8rem] w-full h-[3px]  lg:ml-8 sm:ml-5 ml-3"></span>
         </h2>
         <p className={`sm:text-[1rem] font-medium ${ mood ? 'text-[#fff]' : 'text-[#0B0909]' }`}>
           Hello there! Im thrilled to welcome you to my portfolio. I am a
@@ -30,7 +30,7 @@ function AboutSection({ mood }) {
           the industry.
         </p>
       </div>
-      <div className="box-section flex flex-col items-start gap-y-[1.75rem]">
+      <div className="box-section flex flex-col items-start sm:gap-y-[1.75rem] gap-y-[1rem]">
         <h2
           className={`${
             mood ? "text-[#fff]" : "text-[#0B0909]"

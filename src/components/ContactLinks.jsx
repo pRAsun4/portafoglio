@@ -23,11 +23,11 @@ function ContactLinks({ logoSrc, logoAlt, logoLable, logoText, type }) {
       className="contact-link w-full flex items-center justify-start gap-[0.625rem] font-semibold text-[14px] py-[1.4375rem]"
     >
       <img src={logoSrc} alt={logoAlt} />
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-hidden text-ellipsis whitespace-nowrap">
         <p className="font-semibold text-[0.875rem] text-[#86837E]">
           {logoLable}
         </p>
-        <span className="text-[#2e2e2e] leading-[120%] font-semibold">
+        <span className="text-[#2e2e2e] leading-[120%] font-semibold overflow-hidden text-ellipsis whitespace-nowrap">
           {logoText}
         </span>
       </div>
