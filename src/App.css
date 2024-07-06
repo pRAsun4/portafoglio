@@ -96,6 +96,29 @@ div.small-cards:nth-child(4) {
   background-color: #ffebd1;
 }
 
+.mobile-bar{
+  /* display: none; */
+  top: 0;
+  left: 0;
+  transition: .3s ease;
+  transform: translateX(-100%);
+}
+.mobile-bar.show-mobile{
+  transform: none;
+  display: flex;
+  
+}
+.mobile-bar.hide-mobile{
+  transform: translateX(-100%);
+}
+
+
+@media screen and (min-width: 768px){
+  .mobile-bar{
+    display: none !important;
+  }
+
+}
 @media screen and (max-width: 767px) {
   .button-bar {
     grid-column: span 12 / span 12;

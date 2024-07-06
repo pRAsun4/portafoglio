@@ -13,14 +13,13 @@ function Header({ mood, toggleMood }) {
   const dispatch = useDispatch();
 
   const  handleToggleSideBar = (sidebarName) =>{
-    console.log(sidebarName);
     dispatch(toggleActiveSidebar(sidebarName));
   }
   return (
     <>
       <header className="w-full h-auto py-5">
         <nav className="container flex items-center justify-between">
-          <button className={` md:hidden ham-menu flex items-center justify-center `} onClick={()=>handleToggleSideBar('activeSidebar')}>
+          <button className={` md:hidden ham-menu flex items-center justify-center `} onClick={()=>handleToggleSideBar('hellow')}>
             <svg 
               width="40"
               height="40"

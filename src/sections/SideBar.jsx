@@ -5,6 +5,9 @@ import ContactDetails from "../js/ContactDetails";
 import SocialDetails from "../js/SocialDetails";
 import SocialLinks from "../components/SocialLinks";
 // import Picture from '../assets/profile-pic.jpg'
+
+
+
 export default function SideBar() {
   return (
     <div className=" w-full  flex-col items-center justify-center md:col-span-4 md:flex hidden h-auto relative  ">
