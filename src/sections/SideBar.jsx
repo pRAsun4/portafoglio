@@ -1,9 +1,9 @@
-import Resume from "/updated-resume.pdf";
-import Download from '../assets/download-icon.png'
 import ContactLinks from "../components/ContactLinks";
 import ContactDetails from "../js/ContactDetails";
 import SocialDetails from "../js/SocialDetails";
 import SocialLinks from "../components/SocialLinks";
+import DownloadBtn from "../components/DownloadBtn";
+import NameBox from "../components/NameBox";
 // import Picture from '../assets/profile-pic.jpg'
 
 
@@ -15,21 +15,15 @@ export default function SideBar() {
         {/* <img src={Picture} alt="" className="w-full h-full object-cover " /> */}
       </div>
       <div className="side-content-box w-full h-auto lg:mt-[6.5rem] mt-[4.5rem] rounded-[1.25rem] pt-[5.125rem] lg:pt-[7.125rem] pb-[3.75rem] bg-[#fff] overflow-hidden  ">
-        <div className="name-box w-full flex flex-col  p-4">
-          <h2 className="text-[#0B0909] lg:text-[1.75rem] text-[1.5rem] font-bold text-center ">
-            Prasun Mondal
-          </h2>
-          <p className="text-[#0B090990] text-[1rem] text-center">
-            Frontend Developer
-          </p>
-        </div>
+        <NameBox className={`lg:text-[1.75rem] text-[1.5rem]`} />
         <div className="icon-box w-full flex items-center justify-center mt-3 gap-[0.5625rem] p-4">
-          {SocialDetails.map((contact, index) =>(
-            <SocialLinks 
+          {SocialDetails.map((contact, index) => (
+            <SocialLinks
               key={index}
               toLink={contact.toLink}
               imgSrc={contact.imgSrc}
               imgAlt={contact.imgAlt}
+              className="box flex items-center justify-center lg:w-[3.75rem] lg:h-[3.75rem] w-[2.75rem] h-[2.75rem] rounded-[0.5625rem] bg-[#F2F7FC]"
             />
           ))}
 
@@ -44,13 +38,10 @@ export default function SideBar() {
                 logoLable={contact.logoLable}
                 logoText={contact.logoText}
                 type={contact.type}
+                className="contact-link w-full flex items-center justify-start gap-[0.625rem] font-semibold text-[14px] py-[1.4375rem]"
               />
             ))}
-
-            <a href={Resume} download="updated-resume.pdf" className="flex download-button  justify-center items-center lg:max-w-[12.25rem] w-full mx-auto  mt-[1.25rem] lg:px-[1.25rem] px-3 py-[0.625rem] rounded-[1.25rem] ">
-              <img src={Download} alt="download icon" />
-              <p className="text-[#fff] max-w-full lg:text-[0.875rem] text-[0.8125rem]  "> Download resume</p>
-            </a>
+            <DownloadBtn className=" flex download-button  justify-center items-center lg:max-w-[12.25rem] w-full mx-auto  mt-[1.25rem] lg:px-[1.25rem] px-3 py-[0.625rem] rounded-[1.25rem]  " />
           </div>
         </div>
       </div>

@@ -8,7 +8,6 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<MainApp />} />
-          {/* Define other routes as needed */}
         </Routes>
       </Router>
     </>

@@ -6,21 +6,15 @@ import WhiteName from "../assets/name-white.png";
 import Moon from "../assets/half-moon.svg";
 import Sun from "../assets/sun-icon.svg";
 import '../assets/css/Header.css'
-import { useDispatch } from "react-redux";
-import { toggleActiveSidebar } from "../store/slices/sidebarSlice";
+import MenuBtn from "../components/MenuBtn";
 
 function Header({ mood, toggleMood }) {
-  const dispatch = useDispatch();
-
-  const  handleToggleSideBar = (sidebarName) =>{
-    dispatch(toggleActiveSidebar(sidebarName));
-  }
   return (
     <>
       <header className="w-full h-auto py-5">
         <nav className="container flex items-center justify-between">
-          <button className={` md:hidden ham-menu flex items-center justify-center `} onClick={()=>handleToggleSideBar('hellow')}>
-            <svg 
+          <MenuBtn className="md:hidden ham-menu flex items-center justify-center " >
+            <svg
               width="40"
               height="40"
               viewBox="0 0 40 40"
@@ -35,7 +29,7 @@ function Header({ mood, toggleMood }) {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </MenuBtn>
           <div className="name-box w-[6.25rem] h-auto sm:w-auto ">
             <img
               src={mood ? WhiteName : Name}

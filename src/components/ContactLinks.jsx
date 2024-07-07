@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function ContactLinks({ logoSrc, logoAlt, logoLable, logoText, type }) {
+function ContactLinks({ logoSrc, logoAlt, logoLable, logoText, type, className }) {
   let href;
 
   switch (type) {
@@ -20,7 +20,7 @@ function ContactLinks({ logoSrc, logoAlt, logoLable, logoText, type }) {
   return (
     <a
       href={href}
-      className="contact-link w-full flex items-center justify-start gap-[0.625rem] font-semibold text-[14px] py-[1.4375rem]"
+      className={` contact-links ${className} `}
     >
       <img src={logoSrc} alt={logoAlt} />
       <div className="flex flex-col overflow-hidden text-ellipsis whitespace-nowrap">
@@ -42,4 +42,5 @@ ContactLinks.propTypes = {
   logoLable: PropTypes.string.isRequired,
   logoText: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
