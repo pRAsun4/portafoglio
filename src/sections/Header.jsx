@@ -30,7 +30,7 @@ function Header({ mood, toggleMood }) {
               />
             </svg>
           </MenuBtn>
-          <div className="name-box w-[6.25rem] h-auto sm:w-auto ">
+          <div className="name-box w-[7.25rem] h-auto sm:w-auto ">
             <img
               src={mood ? WhiteName : Name}
               alt={mood ? "white name" : "name"}
