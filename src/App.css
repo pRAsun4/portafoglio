@@ -4,7 +4,6 @@
 body {
   scroll-behavior: smooth;
   transition: all 0.3s ease;
-
 }
 
 ::-webkit-scrollbar {
@@ -18,9 +17,11 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: rgb(255, 156, 26);
-  background: linear-gradient(90deg,
-      rgba(255, 156, 26, 1) 0%,
-      rgba(232, 5, 5, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
   border-radius: 10px;
 }
 
@@ -67,11 +68,19 @@ a,
   box-shadow: 16px 16px 48px #c5c5c5, -16px -16px 48px #ebf2fa;
 }
 
-.light-text{
+.dark-bg {
+  background-color: #2e2e2e;
+}
+
+.light-bg {
+  background-color: #fff;
+}
+
+.light-text {
   color: #fff;
 }
-.dark-text{
-  color: #0B0909;
+.dark-text {
+  color: #0b0909;
 }
 
 .dark-button.active-dark {
@@ -88,16 +97,21 @@ a.contact-link:first-of-type {
 
 a.download-button {
   background: rgb(255, 156, 26);
-  background: linear-gradient(90deg,
-      rgba(255, 156, 26, 1) 0%,
-      rgba(232, 5, 5, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
 }
 
 button.btn-gradient {
+  transition: 0.3s ease;
   background: rgb(255, 156, 26);
-  background: linear-gradient(90deg,
-      rgba(255, 156, 26, 1) 0%,
-      rgba(232, 5, 5, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
 }
 
 button.btn-gradient svg path,
@@ -112,9 +126,11 @@ button.btn-normal {
 
 .header-line {
   background: rgb(255, 156, 26);
-  background: linear-gradient(90deg,
-      rgba(255, 156, 26, 1) 0%,
-      rgba(232, 5, 5, 1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
 }
 
 div.small-cards:nth-child(4) {
@@ -131,11 +147,15 @@ div.small-cards:nth-child(4) {
   background-color: #ffebd1;
 }
 
+/* need to fix below bugs. nth child is not working properly */
+div.resume-box {
+  background-color: #ffe3bf;
+}
+
 .mobile-bar {
-  /* opacity: 0; */
   top: 0;
   left: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
   transform: translateX(-100%);
 }
 
@@ -143,20 +163,26 @@ div.small-cards:nth-child(4) {
   transform: none;
   display: flex;
   opacity: 1;
-
 }
 
 .mobile-bar.hide-mobile {
-  /* opacity: 0; */
   transform: translateX(-100%);
 }
 
+.resume-sections {
+  opacity: 0;
+  transition: 0.3s ease;
+  transform: translateY(30px);
+}
+.resume-sections.sec-anime {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @media screen and (min-width: 768px) {
   .mobile-bar {
     display: none !important;
   }
-
 }
 
 @media screen and (max-width: 767px) {
