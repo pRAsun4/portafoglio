@@ -120,7 +120,7 @@ function ResumeSection({ mood }) {
             {BulletDetails.map((blt, index) => (
               <span
                 key={index}
-                className=" min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] bg-[#E1E8EF] py-[5px] px-[8px] "
+                className={`  min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] ${mood ? 'bg-[#E1E8EF]' : 'bg-[#f2f5f9]'}  py-[5px] px-[8px] `}
               >
                 {blt.softS}
               </span>
@@ -142,7 +142,7 @@ function ResumeSection({ mood }) {
             {BulletDetails.slice(0, 5).map((blt, index) => (
               <span
                 key={index}
-                className=" min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] bg-[#E1E8EF] py-[5px] px-[8px] "
+                className={`  min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] ${mood ? 'bg-[#E1E8EF]' : 'bg-[#f2f5f9]'}  py-[5px] px-[8px] `}
               >
                 {blt.workS}
               </span>

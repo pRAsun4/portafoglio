@@ -5,15 +5,23 @@ import Name from "../assets/name.png";
 import WhiteName from "../assets/name-white.png";
 import Moon from "../assets/half-moon.svg";
 import Sun from "../assets/sun-icon.svg";
-import '../assets/css/Header.css'
+import "../assets/css/Header.css";
 import MenuBtn from "../components/MenuBtn";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveDark } from "../store/slices/toggleMode";
 
 function Header({ mood, toggleMood }) {
+  const dispatch = useDispatch();
+  const toggleDark = useSelector((state) => state.toggleMode.activeDark);
+
+  const handleToggle = () => {
+    dispatch(setActiveDark(!toggleDark));
+  };
   return (
     <>
       <header className="w-full h-auto py-5">
         <nav className="container flex items-center justify-between">
-          <MenuBtn className="md:hidden ham-menu flex items-center justify-center " >
+          <MenuBtn className="md:hidden ham-menu flex items-center justify-center ">
             <svg
               width="40"
               height="40"
@@ -38,7 +46,8 @@ function Header({ mood, toggleMood }) {
             />
           </div>
           <button
-            onClick={toggleMood}
+            // onClick={toggleMood}
+            onClick={() => handleToggle()}
             className={`dark-button  sm:w-[3.5rem] w-[2.5rem] sm:h-[3.5rem] h-[2.5rem] rounded-full bg-[#EBF2FA] flex items-center justify-center 
                 ${mood ? "active-dark" : " "} `}
           >
