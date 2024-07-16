@@ -179,6 +179,20 @@ div.resume-box {
   transform: translateY(0);
 }
 
+@media screen and (min-width: 920px) {
+  .about-skills-grid .left-box,
+  .about-skills-grid .right-box {
+    grid-column: span 6 / span 6;
+  }
+}
+
+@media screen and (max-width: 919px) {
+  .about-skills-grid .left-box,
+  .about-skills-grid .right-box {
+    grid-column: span 12 / span 12;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .mobile-bar {
     display: none !important;

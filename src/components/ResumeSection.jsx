@@ -2,6 +2,7 @@ import React from "react";
 import EducationIcon from "../assets/svg/EducationIcon";
 import { useSelector } from "react-redux";
 import ExperienceIcon from "../assets/svg/ExperienceIcon";
+import BulletDetails from "../js/BulletData";
 
 function ResumeSection({ mood }) {
   const activeSection = useSelector((state) => state.section.activeSection);
@@ -12,7 +13,9 @@ function ResumeSection({ mood }) {
       className={`resume-sections ${
         activeSection ? "sec-anime" : "no-anime"
       } w-full h-auto flex flex-col justify-start 
-        ${mood ? "dark-bg" : "light-bg"}  rounded-[1.25rem] overflow-hidden gap-y-[1rem]`}
+        ${
+          mood ? "dark-bg" : "light-bg"
+        }  rounded-[1.25rem] overflow-hidden gap-y-[1rem]`}
     >
       <div className="header relative py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5 ">
         <h2
@@ -39,25 +42,25 @@ function ResumeSection({ mood }) {
           </div>
           <div className="resume-box p-4 flex flex-col justify-start items-start gap-y-2 rounded-lg border ">
             <p className={` text-[0.8125rem] text-[#A89479] font-normal `}>
-              2020-2021
+              2022-2023
             </p>
             <h4 className={` text-[0.875rem] text-[#000] font-semibold `}>
-              Software Development{" "}
+              Full stack Web Development
             </h4>
             <p className={` text-[0.8125rem] text-[#000] font-medium `}>
-              Moringa School
+              Ekeeda school of data science
             </p>
           </div>
 
           <div className="resume-box p-4 flex flex-col justify-start items-start gap-y-2 rounded-lg border ">
             <p className={` text-[0.8125rem] text-[#A89479] font-normal `}>
-              2020-2021
+              2016-2020
             </p>
             <h4 className={` text-[0.875rem] text-[#000] font-semibold `}>
-              Software Development{" "}
+              Electrical Engineering (B.tech)
             </h4>
             <p className={` text-[0.8125rem] text-[#000] font-medium `}>
-              Moringa School
+              Calcutta Institute of Technology
             </p>
           </div>
         </div>
@@ -75,25 +78,25 @@ function ResumeSection({ mood }) {
           </div>
           <div className="resume-box p-4 flex flex-col justify-start items-start gap-y-2 rounded-lg border ">
             <p className={` text-[0.8125rem] text-[#A89479] font-normal `}>
-              2020-2021
+              2023-2024
             </p>
             <h4 className={` text-[0.875rem] text-[#000] font-semibold `}>
-              Software Development{" "}
+              Front end Developer
             </h4>
             <p className={` text-[0.8125rem] text-[#000] font-medium `}>
-              Moringa School
+              Quadrant informatics pvt.ltd
             </p>
           </div>
 
           <div className="resume-box p-4 flex flex-col justify-start items-start gap-y-2 rounded-lg border ">
             <p className={` text-[0.8125rem] text-[#A89479] font-normal `}>
-              2020-2021
+              2020-2022
             </p>
             <h4 className={` text-[0.875rem] text-[#000] font-semibold `}>
-              Software Development{" "}
+              Electrical Officer
             </h4>
             <p className={` text-[0.8125rem] text-[#000] font-medium `}>
-              Moringa School
+              AMN Life Science pvt. Ltd
             </p>
           </div>
         </div>
@@ -101,21 +104,31 @@ function ResumeSection({ mood }) {
       <div
         className={`about-skills-grid ${
           mood ? "dark-bg" : "bg-[#E1E8EF]"
-        } grid grid-cols-12 items-start gap-y-6 xl:gap-x-[3.2rem] lg:gap-x-[2rem] md:gap-x-[1.5rem] w-full h-full   py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5`}
+        } grid grid-cols-12 items-start gap-y-6 xl:gap-x-[3.2rem] lg:gap-x-[1rem] md:gap-x-[1.5rem] w-full h-full   py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5`}
       >
-        <div className="left-box md:col-span-6 col-span-12 flex flex-col gap-y-[1.25rem]">
+        <div className="left-box  flex flex-col gap-y-[1.25rem]">
           <div className="header-logo flex items-center ">
             <h3
               className={` ${
                 mood ? "light-text" : "dark-text"
-              } lg:text-[1.75rem] text-[1.25rem] font-medium  ml-2`}
+              } lg:text-[1.75rem] text-[1.25rem] font-medium `}
             >
               Work Skills
             </h3>
           </div>
+          <div className="bullet-box flex flex-wrap gap-x-[1.875rem] gap-y-[1.25rem] ">
+            {BulletDetails.map((blt, index) => (
+              <span
+                key={index}
+                className=" min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] bg-[#E1E8EF] py-[5px] px-[8px] "
+              >
+                {blt.softS}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div className="right-box md:col-span-6 col-span-12 flex flex-col gap-y-[1.25rem]">
+        <div className="right-box  flex flex-col gap-y-[1.25rem]">
           <div className="header-logo flex items-center ">
             <h3
               className={` ${
@@ -124,6 +137,16 @@ function ResumeSection({ mood }) {
             >
               Soft Skills
             </h3>
+          </div>
+          <div className="bullet-box flex flex-wrap gap-x-[1.875rem] gap-y-[1.25rem] ">
+            {BulletDetails.slice(0, 5).map((blt, index) => (
+              <span
+                key={index}
+                className=" min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] bg-[#E1E8EF] py-[5px] px-[8px] "
+              >
+                {blt.workS}
+              </span>
+            ))}
           </div>
         </div>
       </div>
