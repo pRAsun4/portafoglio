@@ -4,8 +4,10 @@ import { useSelector } from "react-redux";
 import ExperienceIcon from "../assets/svg/ExperienceIcon";
 import BulletDetails from "../js/BulletData";
 
-function ResumeSection({ mood }) {
+function ResumeSection() {
   const activeSection = useSelector((state) => state.section.activeSection);
+  const toggleDark = useSelector((state) => state.toggleMode.activeDark);
+
   console.log(activeSection, "resumeSection");
 
   return (
@@ -14,13 +16,13 @@ function ResumeSection({ mood }) {
         activeSection ? "sec-anime" : "no-anime"
       } w-full h-auto flex flex-col justify-start 
         ${
-          mood ? "dark-bg" : "light-bg"
+          toggleDark ? "dark-bg" : "light-bg"
         }  rounded-[1.25rem] overflow-hidden gap-y-[1rem]`}
     >
       <div className="header relative py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5 ">
         <h2
           className={`before-heade ${
-            mood ? " light-text " : " dark-text"
+            toggleDark ? " light-text " : " dark-text"
           } text-left xl:text-[2.5rem] sm:text-[1.5rem] text-[1.2rem] font-medium relative flex items-center`}
         >
           Resume
@@ -34,7 +36,7 @@ function ResumeSection({ mood }) {
             <EducationIcon />
             <h3
               className={` ${
-                mood ? "light-text" : "dark-text"
+                toggleDark ? "light-text" : "dark-text"
               } lg:text-[1.75rem] text-[1.25rem] font-medium  ml-2`}
             >
               Education
@@ -70,7 +72,7 @@ function ResumeSection({ mood }) {
             <ExperienceIcon />
             <h3
               className={` ${
-                mood ? "light-text" : "dark-text"
+                toggleDark ? "light-text" : "dark-text"
               } lg:text-[1.75rem] text-[1.25rem] font-medium  ml-2`}
             >
               Experience
@@ -103,14 +105,14 @@ function ResumeSection({ mood }) {
       </div>
       <div
         className={`about-skills-grid ${
-          mood ? "dark-bg" : "bg-[#E1E8EF]"
+          toggleDark ? "dark-bg" : "bg-[#E1E8EF]"
         } grid grid-cols-12 items-start gap-y-6 xl:gap-x-[3.2rem] lg:gap-x-[1rem] md:gap-x-[1.5rem] w-full h-full   py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5`}
       >
         <div className="left-box  flex flex-col gap-y-[1.25rem]">
           <div className="header-logo flex items-center ">
             <h3
               className={` ${
-                mood ? "light-text" : "dark-text"
+                toggleDark ? "light-text" : "dark-text"
               } lg:text-[1.75rem] text-[1.25rem] font-medium `}
             >
               Work Skills
@@ -120,7 +122,7 @@ function ResumeSection({ mood }) {
             {BulletDetails.map((blt, index) => (
               <span
                 key={index}
-                className={`  min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] ${mood ? 'bg-[#E1E8EF]' : 'bg-[#f2f5f9]'}  py-[5px] px-[8px] `}
+                className={`  min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] ${toggleDark ? 'bg-[#E1E8EF]' : 'bg-[#f2f5f9]'}  py-[5px] px-[8px] `}
               >
                 {blt.softS}
               </span>
@@ -132,7 +134,7 @@ function ResumeSection({ mood }) {
           <div className="header-logo flex items-center ">
             <h3
               className={` ${
-                mood ? "light-text" : "dark-text"
+                toggleDark ? "light-text" : "dark-text"
               } lg:text-[1.75rem] text-[1.25rem] font-medium  ml-2`}
             >
               Soft Skills
@@ -142,7 +144,7 @@ function ResumeSection({ mood }) {
             {BulletDetails.slice(0, 5).map((blt, index) => (
               <span
                 key={index}
-                className={`  min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] ${mood ? 'bg-[#E1E8EF]' : 'bg-[#f2f5f9]'}  py-[5px] px-[8px] `}
+                className={`  min-w-[3.75rem] h-[2.1875rem] flex items-center justify-center rounded-[.5rem] ${toggleDark ? 'bg-[#E1E8EF]' : 'bg-[#f2f5f9]'}  py-[5px] px-[8px] `}
               >
                 {blt.workS}
               </span>

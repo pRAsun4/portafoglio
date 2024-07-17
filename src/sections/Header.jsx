@@ -10,11 +10,11 @@ import MenuBtn from "../components/MenuBtn";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveDark } from "../store/slices/toggleMode";
 
-function Header({ mood, toggleMood }) {
+function Header() {
   const dispatch = useDispatch();
   const toggleDark = useSelector((state) => state.toggleMode.activeDark);
 
-  const handleToggle = () => {
+  const toggleMood = () => {
     dispatch(setActiveDark(!toggleDark));
   };
   return (
@@ -31,7 +31,7 @@ function Header({ mood, toggleMood }) {
             >
               <path
                 d="M33.3334 30.5L6.66671 30.5M28.3334 20.5L6.66671 20.5M23.3334 10.5L6.66671 10.5"
-                stroke={mood ? "white" : "black"}
+                stroke={toggleDark ? "white" : "black"}
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -40,27 +40,23 @@ function Header({ mood, toggleMood }) {
           </MenuBtn>
           <div className="name-box w-[7.25rem] h-auto sm:w-auto ">
             <img
-              src={mood ? WhiteName : Name}
-              alt={mood ? "white name" : "name"}
+              src={toggleDark ? WhiteName : Name}
+              alt={toggleDark ? "white name" : "name"}
               className="w-auto"
             />
           </div>
           <button
             // onClick={toggleMood}
-            onClick={() => handleToggle()}
+            onClick={() => toggleMood()}
             className={`dark-button  sm:w-[3.5rem] w-[2.5rem] sm:h-[3.5rem] h-[2.5rem] rounded-full bg-[#EBF2FA] flex items-center justify-center 
-                ${mood ? "active-dark" : " "} `}
+                ${toggleDark ? "active-dark" : " "} `}
           >
-            <img src={mood ? Sun : Moon} alt={mood ? "sun" : "half moon"} />
+            <img src={toggleDark ? Sun : Moon} alt={toggleDark ? "sun" : "half moon"} />
           </button>
         </nav>
       </header>
     </>
   );
 }
-Header.propTypes = {
-  mood: PropTypes.bool.isRequired,
-  toggleMood: PropTypes.func.isRequired,
-};
 
-export default React.memo(Header);
+export default Header;

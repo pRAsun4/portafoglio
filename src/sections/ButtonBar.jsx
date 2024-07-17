@@ -11,12 +11,13 @@ function ButtonBar({mood}) {
   const activeButton = useSelector((state) => state.section.activeButton);
   const activeSection = useSelector((state) => state.section.activeSection);
 
+
   const renderSection = () => {
     switch (activeSection) {
       case 1:
-        return <AboutSection mood={mood} />;
+        return <AboutSection  />;
       case 2:
-        return <ResumeSection mood={mood} />;
+        return <ResumeSection  />;
       default:
         return <AboutSection />;
     }
