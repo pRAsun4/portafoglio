@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActiveSection } from "../store/slices/sectionSlice";
 import AboutSection from "../components/AboutSection";
 import ResumeSection from "../components/ResumeSection";
+import ContactSection from "../components/ContactSection";
 
 function ButtonBar({mood}) {
   const dispatch = useDispatch();
@@ -18,6 +19,10 @@ function ButtonBar({mood}) {
         return <AboutSection  />;
       case 2:
         return <ResumeSection  />;
+      case 3:
+        return <ContactSection  />;
+      case 4:
+        return <ContactSection  />;
       default:
         return <AboutSection />;
     }
