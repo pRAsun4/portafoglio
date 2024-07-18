@@ -7,7 +7,7 @@ import AboutSection from "../components/AboutSection";
 import ResumeSection from "../components/ResumeSection";
 import ContactSection from "../components/ContactSection";
 
-function ButtonBar({ mood }) {
+function ButtonBar() {
   const dispatch = useDispatch();
   const activeButton = useSelector((state) => state.section.activeButton);
   const activeSection = useSelector((state) => state.section.activeSection);
