@@ -169,12 +169,12 @@ div.resume-box {
   transform: translateX(-100%);
 }
 
-.resume-sections {
+.about-section  > * {
   opacity: 0;
   transition: 0.3s ease;
   transform: translateY(30px);
 }
-.resume-sections.sec-anime {
+.about-section.active-section > * {
   opacity: 1;
   transform: translateY(0);
 }

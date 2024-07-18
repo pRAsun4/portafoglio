@@ -30,10 +30,10 @@ export default function MainApp() {
     return (
         <div
             className={` main-app w-full h-full relative ${toggleDark ? "dark-mode" : "light-mode"} `} >
-            <Header mood={mood} toggleMood={toggleMood} />
+            <Header  toggleMood={toggleMood} />
             <main className=" sm:mt-10 mt-5 w-full h-full items-start wrapper-main grid grid-cols-12 container relative border ">
                 <SideBar />
-                <ButtonBar mood={mood} />
+                <ButtonBar  />
             </main>
             <MobileBar />
         </div>

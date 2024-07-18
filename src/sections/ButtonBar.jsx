@@ -7,22 +7,21 @@ import AboutSection from "../components/AboutSection";
 import ResumeSection from "../components/ResumeSection";
 import ContactSection from "../components/ContactSection";
 
-function ButtonBar({mood}) {
+function ButtonBar({ mood }) {
   const dispatch = useDispatch();
   const activeButton = useSelector((state) => state.section.activeButton);
   const activeSection = useSelector((state) => state.section.activeSection);
 
-
   const renderSection = () => {
     switch (activeSection) {
       case 1:
-        return <AboutSection  />;
+        return <AboutSection />;
       case 2:
-        return <ResumeSection  />;
+        return <ResumeSection />;
       case 3:
-        return <ContactSection  />;
+        return <ContactSection />;
       case 4:
-        return <ContactSection  />;
+        return <ContactSection />;
       default:
         return <AboutSection />;
     }
@@ -45,7 +44,7 @@ function ButtonBar({mood}) {
           />
         ))}
       </div>
-      <div className="main-section">{renderSection()}</div>
+      <div className={` main-section  `}>{renderSection()}</div>
     </div>
   );
 }

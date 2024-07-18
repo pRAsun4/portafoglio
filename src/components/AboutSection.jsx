@@ -7,13 +7,15 @@ import { useSelector } from "react-redux";
 
 function AboutSection() {
   const toggleDark = useSelector((state) => state.toggleMode.activeDark);
+  const activeSection = useSelector((state) => state.section.activeSection);
+
 
   return (
     <div
       className={`about-sections w-full h-auto flex flex-col justify-start 
         ${
           toggleDark ? "bg-[#2e2e2e]" : "bg-white"
-        } py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5 rounded-[1.25rem] gap-y-[1rem]`}
+        } ${activeSection ? 'active-section' : ''} py-[2.25rem] lg:px-[3rem] sm:px-[2rem] px-5 rounded-[1.25rem] gap-y-[1rem]`}
     >
       <div className="header relative">
         <h2
@@ -57,8 +59,5 @@ function AboutSection() {
   );
 }
 
-AboutSection.propTypes = {
-  mood: PropTypes.bool.isRequired,
-};
 
 export default AboutSection;
