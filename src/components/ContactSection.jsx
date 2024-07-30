@@ -23,7 +23,7 @@ function ContactSection() {
           <span className="header-line lg:max-w-[15.625rem] md:max-w-[12rem] sm:max-w-[10rem] max-w-[8rem] w-full h-[3px]  lg:ml-8 sm:ml-5 ml-3"></span>
         </h2>
       </div>
-      <div className="box-section grid grid-cols-12 lg:gap-x-[1.6875rem] gap-x-4 lg:gap-y-8 gap-y-6 ">
+      <div className="box-section grid grid-cols-12 lg:gap-x-[1.6875rem] md:gap-x-4 gap-x-0 lg:gap-y-8 gap-y-6 ">
         <div className=" lg:col-span-6 col-span-12 w-full h-full min-h-[9.375rem] flex flex-col px-[1.4rem] py-[1.6rem] gap-6 bg-[#FFEED9] rounded-[1.25rem] ">
           <div className="box-header flex items-start gap-2">
             <PhoneIcon />
@@ -40,13 +40,34 @@ function ContactSection() {
             <h4 className=""> Email:</h4>
           </div>
           <div className="numbers w-full flex flex-col xl:pl-8 pl:3 items-start ">
-            <h5 className="overflow-hidden text-ellipsis whitespace-nowrap">prasun0403.pm@gmail.com</h5>
+            <h5 className="overflow-hidden text-ellipsis whitespace-nowrap">
+              prasun0403.pm@gmail.com
+            </h5>
           </div>
         </div>
-        <div className=" col-span-12  flex flex-col p-[1.875rem] bg-[#F8FBFB] rounded-[1.25rem]">
-          <p className=" max-w-[35.625rem] leading-[2]">I am always open to discussing <strong> new projects, opportunities in tech world,
-          partnerships</strong> and more so <strong>mentorship.</strong> </p>
-
+        <div className=" col-span-12  flex flex-col md:p-[1.875rem] p-4 bg-[#F8FBFB] rounded-[1.25rem]">
+          <p className=" max-w-[35.625rem] leading-[2]">
+            I am always open to discussing
+            <strong>
+              new projects, opportunities in tech world, partnerships
+            </strong>
+            and more so <strong>mentorship.</strong>
+          </p>
+          <form action="#" className="w-full h-auto flex flex-col gap-6 items-start mt-8">
+            <div className="field w-full flex flex-col">
+              <label htmlFor="name" className=" font-semibold ">Name:</label>
+              <input type="text" name="name" className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]" />
+            </div>
+            <div className="field w-full flex flex-col">
+              <label htmlFor="email" className=" font-semibold ">Email:</label>
+              <input type="text" name="email" className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]" />
+            </div>
+            <div className="field w-full flex flex-col">
+              <label htmlFor="message" className=" font-semibold ">Message:</label>
+              <textarea name="message" id="messageBox" className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"></textarea>
+            </div>
+            <button type="submit" className=" submit-btn w-full max-w-[6.25rem] h-auto rounded-full flex items-center justify-center px-[1.875rem] py-[0.625rem] font-semibold ">Submit</button>
+          </form>
         </div>
       </div>
     </div>

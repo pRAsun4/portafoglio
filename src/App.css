@@ -33,6 +33,9 @@ body {
 html {
   font-size: 16px;
 }
+*{
+  transition: .3s ease;
+}
 
 h1,
 h2,
@@ -46,6 +49,7 @@ h6 {
 
 p,
 span,
+label,
 a,
 .para,
 .subtitle,
@@ -70,6 +74,13 @@ a,
 
 .dark-bg {
   background-color: #2e2e2e;
+}
+
+.mobile-bar button svg path{
+  stroke: #000;
+}
+.mobile-bar.active-dark button svg path{
+  stroke: #fff;
 }
 
 .light-bg {
@@ -123,6 +134,21 @@ button.btn-gradient p {
 button.btn-normal {
   background-color: #e1e8ef;
 }
+button.submit-btn {
+  border: 1px solid rgba(255, 156, 26, 1);
+  transition: .3s ease;
+
+}
+button.submit-btn:hover {
+  background: rgb(255, 156, 26);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
+  color: #fff;
+  transition: .3s ease;
+}
 
 .header-line {
   background: rgb(255, 156, 26);
@@ -167,16 +193,6 @@ div.resume-box {
 
 .mobile-bar.hide-mobile {
   transform: translateX(-100%);
-}
-
-.about-section  > * {
-  opacity: 0;
-  transition: 0.3s ease;
-  transform: translateY(30px);
-}
-.about-section.active-section > * {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 @media screen and (min-width: 920px) {
