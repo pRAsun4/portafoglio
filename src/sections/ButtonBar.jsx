@@ -6,10 +6,10 @@ import { setActiveSection } from "../store/slices/sectionSlice";
 import AboutSection from "../components/AboutSection";
 import ResumeSection from "../components/ResumeSection";
 import ContactSection from "../components/ContactSection";
+import SectionButtons from "../components/SectionButtons";
 
 function ButtonBar() {
   const dispatch = useDispatch();
-  const activeButton = useSelector((state) => state.section.activeButton);
   const activeSection = useSelector((state) => state.section.activeSection);
 
   const renderSection = () => {
@@ -33,17 +33,8 @@ function ButtonBar() {
 
   return (
     <div className="button-bar w-full flex flex-col md:pl-[1.25rem] md:col-span-8 ">
-      <div className="button-wrapper mb-3 md:max-w-[31.875rem] max-w-full w-full h-auto lg:gap-x-[2.5rem] sm:gap-x-[1.5rem] gap-0 flex items-center justify-between md:relative fixed bottom-0 right-0 self-end py-[10px] px-8 rounded-[1.25rem] z-20 border">
-        {buttonData.map((btn, index) => (
-          <ButtonDetails
-            key={index}
-            buttonLogo={btn.buttonLogo}
-            buttonText={btn.buttonText}
-            onClick={() => handleButtonClick(index)}
-            isActive={activeButton === index}
-          />
-        ))}
-      </div>
+      {/* <SectionButtons className=" md:hidden flex !flex-col !right-4 bottom-4 !w-fit h-auto !gap-y-6 !py-4 !px-6 "  handleButtonClick={handleButtonClick} /> */}
+      <SectionButtons  className=" md:flex hidden " handleButtonClick={handleButtonClick} />
       <div className={` main-section  `}>{renderSection()}</div>
     </div>
   );
