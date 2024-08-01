@@ -20,8 +20,8 @@ function MobileBar() {
                     <path d="M5 12H19M5 12L11 18M5 12L11 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </MenuBtn>
-            <div className="mobile-bar-wrapper w-full h-full flex flex-col items-center mt-[7rem]">
-                <div className="img-box rounded-[1.25rem] w-[100px] h-[100px] bg-purple-500 absolute top-[2rem] overflow-hidden ">
+            <div className="mobile-bar-wrapper w-full h-full flex flex-col items-center mt-[10rem]">
+                <div className="img-box rounded-[1.25rem] w-[100px] h-[100px] bg-purple-500 absolute top-[4rem] overflow-hidden ">
                     {/* <img src={Picture} alt="" className="w-full h-full object-cover " /> */}
                 </div>
                 <NameBox className=" text-[1.25rem] " />

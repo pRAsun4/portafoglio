@@ -33,9 +33,9 @@ function ButtonBar() {
 
   return (
     <div className="button-bar w-full flex flex-col md:pl-[1.25rem] md:col-span-8 ">
-      {/* <SectionButtons className=" md:hidden flex !flex-col !right-4 bottom-4 !w-fit h-auto !gap-y-6 !py-4 !px-6 "  handleButtonClick={handleButtonClick} /> */}
-      <SectionButtons  className=" md:flex hidden " handleButtonClick={handleButtonClick} />
-      <div className={` main-section  `}>{renderSection()}</div>
+      <SectionButtons className=" !rounded-none "  handleButtonClick={handleButtonClick} />
+      {/* <SectionButtons  className=" md:flex hidden " handleButtonClick={handleButtonClick} /> */}
+      <div className={` main-section md:mb-0 mb-[4.6875rem] `}>{renderSection()}</div>
     </div>
   );
 }

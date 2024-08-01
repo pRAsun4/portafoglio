@@ -49,7 +49,7 @@ export default function MainApp() {
                 <ButtonBar  />
             </main>
             <MobileBar />
-            <button onClick={handleShow} className={` ${showBar? 'flex' : 'hidden'} z-20 w-8 h-8  items-center justify-center fixed right-6 bottom-6 border rounded-full`}>+</button>
+            {/* <button onClick={handleShow} className={` ${showBar? 'flex' : 'hidden'} z-20 w-8 h-8  items-center justify-center fixed right-6 bottom-6 border rounded-full`}>+</button> */}
             {/* <SectionButtons className={`${showBar ? " h-0 " : " h-auto"} !flex-col !right-4 bottom-4 !w-fit  !gap-y-6 !py-4 !px-6 `}  handleButtonClick={handleButtonClick} />  */}
         </div>
     );

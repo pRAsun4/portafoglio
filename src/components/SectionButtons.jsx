@@ -9,7 +9,7 @@ function SectionButtons({ handleButtonClick, className }) {
 
   return (
     <div
-      className={` button-wrapper mb-3 md:max-w-[31.875rem] max-w-full w-full h-auto lg:gap-x-[2.5rem] sm:gap-x-[1.5rem] gap-0 flex items-center justify-between md:relative fixed bottom-0 right-0 self-end py-[10px] px-8 rounded-[1.25rem] z-20 border ${className} `}
+      className={` button-wrapper mb-3 md:max-w-[31.875rem] max-w-full w-full h-auto lg:gap-x-[2.5rem] sm:gap-x-[1.5rem] gap-0 flex items-center justify-between md:relative fixed bottom-0 right-0 self-end py-[10px] md:px-8 px-5 rounded-[1.25rem] z-20  ${className} `}
     >
       {ButtonData.map((btn, index) => (
         <ButtonDetails
