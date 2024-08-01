@@ -8,6 +8,7 @@ const toggleMode = createSlice({
     reducers: {
         setActiveDark:(state, action) =>{
             state.activeDark = action.payload;
+            console.log(action.payload ,"frm tooglemode");
         }
     }
 })
