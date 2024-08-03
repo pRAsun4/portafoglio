@@ -7,6 +7,7 @@ import AboutSection from "../components/AboutSection";
 import ResumeSection from "../components/ResumeSection";
 import ContactSection from "../components/ContactSection";
 import SectionButtons from "../components/SectionButtons";
+import PortfolioSection from "../components/PortfolioSection";
 
 function ButtonBar() {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function ButtonBar() {
       case 2:
         return <ResumeSection />;
       case 3:
-        return <ContactSection />;
+        return <PortfolioSection />;
       case 4:
         return <ContactSection />;
       default:
@@ -33,7 +34,7 @@ function ButtonBar() {
 
   return (
     <div className="button-bar w-full flex flex-col md:pl-[1.25rem] md:col-span-8 ">
-      <SectionButtons className=" !rounded-none "  handleButtonClick={handleButtonClick} />
+      <SectionButtons className="  "  handleButtonClick={handleButtonClick} />
       {/* <SectionButtons  className=" md:flex hidden " handleButtonClick={handleButtonClick} /> */}
       <div className={` main-section md:mb-0 mb-[4.6875rem] `}>{renderSection()}</div>
     </div>
