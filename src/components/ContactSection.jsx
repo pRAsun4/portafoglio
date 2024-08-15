@@ -100,60 +100,61 @@ function ContactSection() {
             </strong>
             and more so <strong>mentorship.</strong>
           </p>
-          {submitted ? (
-            <div className="w-full flex flex-col items-start">
-              <h4>Thank you for connect with me</h4>
+          <form
+            ref={form}
+            onSubmit={handleSubmit}
+            className="w-full h-auto flex flex-col gap-6 items-start mt-8"
+          >
+            <div className="field w-full flex flex-col">
+              <label htmlFor="name" className=" font-semibold ">
+                Name:
+              </label>
+              <input
+                type="text"
+                name="user_name"
+                className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
+                value={formData.user_name}
+                onChange={handleChange}
+              />
             </div>
-          ) : (
-            <form
-              ref={form}
-              onSubmit={handleSubmit}
-              className="w-full h-auto flex flex-col gap-6 items-start mt-8"
+            <div className="field w-full flex flex-col">
+              <label htmlFor="email" className=" font-semibold ">
+                Email:
+              </label>
+              <input
+                type="text"
+                name="user_email"
+                className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
+                value={formData.user_email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="field w-full flex flex-col">
+              <label htmlFor="message" className=" font-semibold ">
+                Message:
+              </label>
+              <textarea
+                name="message"
+                id="messageBox"
+                className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className=" submit-btn w-full max-w-[6.25rem] h-auto rounded-full flex items-center justify-center px-[1.875rem] py-[0.625rem] font-semibold "
             >
-              <div className="field w-full flex flex-col">
-                <label htmlFor="name" className=" font-semibold ">
-                  Name:
-                </label>
-                <input
-                  type="text"
-                  name="user_name"
-                  className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
+              Submit
+            </button>
+            {submitted ? (
+              <div className="w-full flex items-start">
+                <h4>Thank you </h4>
               </div>
-              <div className="field w-full flex flex-col">
-                <label htmlFor="email" className=" font-semibold ">
-                  Email:
-                </label>
-                <input
-                  type="text"
-                  name="user_email"
-                  className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="field w-full flex flex-col">
-                <label htmlFor="message" className=" font-semibold ">
-                  Message:
-                </label>
-                <textarea
-                  name="message"
-                  id="messageBox"
-                  className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
-                  value={formData.message}
-                  onChange={handleChange}
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className=" submit-btn w-full max-w-[6.25rem] h-auto rounded-full flex items-center justify-center px-[1.875rem] py-[0.625rem] font-semibold "
-              >
-                Submit
-              </button>
-            </form>
-          )}
+            ) : (
+              <div className="hidden"></div>
+            )}
+          </form>
         </div>
       </div>
     </div>
