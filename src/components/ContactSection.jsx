@@ -1,10 +1,57 @@
-import React from "react";
+import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import EmailIcon from "../assets/svg/EmailIcon";
 import PhoneIcon from "../assets/svg/PhoneIcon";
+import emailjs from "@emailjs/browser";
 
 function ContactSection() {
   const toggleDark = useSelector((state) => state.toggleMode.activeDark);
+  const form = useRef();
+  const [formData, setFormData] = useState({
+    user_name: "",
+    user_email: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateParams = {
+      from_name: formData.user_name,
+      to_name: "Prasun",
+      message: formData.message,
+      user_email: formData.user_email,
+    };
+
+    emailjs
+      .send(
+        "service_m8ljomn",
+        "template_9vcojpw",
+        templateParams,
+        "7FMJApcE58JqK0P2h"
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+          console.log("Message sent:", formData);
+          setFormData({
+            user_name: "",
+            user_email: "",
+            message: "",
+          });
+          setSubmitted(true);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
 
   return (
     <div
@@ -53,21 +100,60 @@ function ContactSection() {
             </strong>
             and more so <strong>mentorship.</strong>
           </p>
-          <form action="#" className="w-full h-auto flex flex-col gap-6 items-start mt-8">
-            <div className="field w-full flex flex-col">
-              <label htmlFor="name" className=" font-semibold ">Name:</label>
-              <input type="text" name="name" className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]" />
+          {submitted ? (
+            <div className="w-full flex flex-col items-start">
+              <h4>Thank you for connect with me</h4>
             </div>
-            <div className="field w-full flex flex-col">
-              <label htmlFor="email" className=" font-semibold ">Email:</label>
-              <input type="text" name="email" className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]" />
-            </div>
-            <div className="field w-full flex flex-col">
-              <label htmlFor="message" className=" font-semibold ">Message:</label>
-              <textarea name="message" id="messageBox" className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"></textarea>
-            </div>
-            <button type="submit" className=" submit-btn w-full max-w-[6.25rem] h-auto rounded-full flex items-center justify-center px-[1.875rem] py-[0.625rem] font-semibold ">Submit</button>
-          </form>
+          ) : (
+            <form
+              ref={form}
+              onSubmit={handleSubmit}
+              className="w-full h-auto flex flex-col gap-6 items-start mt-8"
+            >
+              <div className="field w-full flex flex-col">
+                <label htmlFor="name" className=" font-semibold ">
+                  Name:
+                </label>
+                <input
+                  type="text"
+                  name="user_name"
+                  className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="field w-full flex flex-col">
+                <label htmlFor="email" className=" font-semibold ">
+                  Email:
+                </label>
+                <input
+                  type="text"
+                  name="user_email"
+                  className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="field w-full flex flex-col">
+                <label htmlFor="message" className=" font-semibold ">
+                  Message:
+                </label>
+                <textarea
+                  name="message"
+                  id="messageBox"
+                  className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className=" submit-btn w-full max-w-[6.25rem] h-auto rounded-full flex items-center justify-center px-[1.875rem] py-[0.625rem] font-semibold "
+              >
+                Submit
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </div>
