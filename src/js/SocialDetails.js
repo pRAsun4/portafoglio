@@ -12,12 +12,12 @@ const SocialDetails = [
   {
     imgSrc: Github,
     imgAlt: "github logo",
-    toLink: "github.com",
+    toLink: "https://github.com/pRAsun4",
   },
   {
     imgSrc: Linkedln,
     imgAlt: "linkedin logo",
-    toLink: "linkedln.com",
+    toLink: "https://www.linkedin.com/in/prasun-mondal-7587271bb/",
   },
   {
     imgSrc: Twitter,

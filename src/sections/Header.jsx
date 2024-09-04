@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Name from "../assets/name.png";
 import WhiteName from "../assets/name-white.png";
@@ -14,12 +14,16 @@ function Header() {
   const dispatch = useDispatch();
   const toggleDark = useSelector((state) => state.toggleMode.activeDark);
 
+  useEffect(() => {
+    document.body.className = toggleDark ? "dark-mode" : "light-mode";
+  },[toggleDark])
+
   const toggleMood = () => {
     dispatch(setActiveDark(!toggleDark));
   };
   return (
     <>
-      <header className="w-full h-auto py-5">
+      <header className={` w-full h-auto py-5 sticky top-0 left-0 ${toggleDark ? 'bg-black' : 'bg-[#f2f5f9]'} z-30 `}>
         <nav className="container flex items-center justify-between">
           <MenuBtn className="md:hidden ham-menu flex items-center justify-center ">
             <svg
