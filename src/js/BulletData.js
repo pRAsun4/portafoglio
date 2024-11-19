@@ -23,6 +23,10 @@ const BulletDetails = [
     },
     {
       workS: "" ,
+      softS: "React js"
+    },
+    {
+      workS: "" ,
       softS: "Shopify"
     },
     {

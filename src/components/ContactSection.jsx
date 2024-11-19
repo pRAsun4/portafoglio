@@ -39,7 +39,6 @@ function ContactSection() {
       .then(
         (result) => {
           console.log("SUCCESS!", result.text);
-          console.log("Message sent:", formData);
           setFormData({
             user_name: "",
             user_email: "",
@@ -94,9 +93,9 @@ function ContactSection() {
         </div>
         <div className=" col-span-12  flex flex-col md:p-[1.875rem] p-4 bg-[#F8FBFB] rounded-[1.25rem]">
           <p className=" max-w-[35.625rem] leading-[2]">
-            I am always open to discussing
+            I am always open to discussing {`\n`}
             <strong>
-              new projects, opportunities in tech world, partnerships
+              new projects, opportunities in tech world, partnerships {`\n`}
             </strong>
             and more so <strong>mentorship.</strong>
           </p>
@@ -151,9 +150,7 @@ function ContactSection() {
               <div className="w-full flex items-start">
                 <h4>Thank you </h4>
               </div>
-            ) : (
-              <div className="hidden"></div>
-            )}
+            ) : null}
           </form>
         </div>
       </div>

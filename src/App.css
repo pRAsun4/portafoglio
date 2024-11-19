@@ -33,9 +33,9 @@ body {
 html {
   font-size: 16px;
 }
-* {
+/* * {
   transition: 0.3s ease;
-}
+} */
 
 h1,
 h2,
@@ -135,6 +135,16 @@ button.btn-gradient p {
 button.btn-normal {
   background-color: #e1e8ef;
 }
+button.btn-normal:hover, button.btn-normal:hover svg path {
+  background: rgb(255, 156, 26);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 156, 26, 1) 0%,
+    rgba(232, 5, 5, 1) 100%
+  );
+  color: #fff;
+  fill: #fff;
+}
 button.submit-btn {
   border: 1px solid rgba(255, 156, 26, 1);
   transition: 0.3s ease;
@@ -204,11 +214,15 @@ div.resume-box {
 }
 
 @media screen and (min-width: 1024px) {
-  .project-cards:nth-child(1), .project-cards:nth-child(4), .project-cards:nth-child(5){
+  .project-cards:nth-child(1),
+  .project-cards:nth-child(4),
+  .project-cards:nth-child(5) {
     max-height: 12.5rem;
     background-color: #ffe3bf;
   }
-  .project-cards:nth-child(2), .project-cards:nth-child(3), .project-cards:nth-child(6){
+  .project-cards:nth-child(2),
+  .project-cards:nth-child(3),
+  .project-cards:nth-child(6) {
     max-height: 15.625rem;
     background-color: #ffeed9;
   }
@@ -246,7 +260,7 @@ div.resume-box {
   .mobile-bar {
     display: none !important;
   }
-  .button-wrapper{
+  .button-wrapper {
     border-radius: 1.25rem;
   }
 }

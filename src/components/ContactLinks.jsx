@@ -11,7 +11,7 @@ function ContactLinks({ logoSrc, logoAlt, logoLable, logoText, type, className }
     href = `mailto:${logoText}`;
       break;
     case "location":
-      href = { logoText };
+      href = "#";
       break;
     default:
       href = "#";

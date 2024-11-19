@@ -14,7 +14,7 @@ function MobileBar() {
 
 
     return (
-        <div className={` ${activeSideBar ? 'show-mobile' : 'hide-mobile'} mobile-bar max-w-[14.5rem] sm:max-w-[16rem] w-full h-full fixed  p-[0.625rem] ${toggleDark ? 'bg-[#2e2e2e] active-dark' : 'bg-white'}  overflow-auto border `}>
+        <div className={` ${activeSideBar ? 'show-mobile z-40' : 'hide-mobile'} mobile-bar max-w-[14.5rem] sm:max-w-[16rem] w-full h-full fixed  p-[0.625rem] ${toggleDark ? 'bg-[#2e2e2e] active-dark' : 'bg-white'}  overflow-auto border `}>
             <MenuBtn className='btn flex w-auto h-auto  items-center justify-center absolute top-4 right-4 '>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19M5 12L11 18M5 12L11 6" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
