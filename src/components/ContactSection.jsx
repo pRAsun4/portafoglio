@@ -2,14 +2,13 @@ import { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import EmailIcon from "../assets/svg/EmailIcon";
 import PhoneIcon from "../assets/svg/PhoneIcon";
-import emailjs from "@emailjs/browser";
 
 function ContactSection() {
   const toggleDark = useSelector((state) => state.toggleMode.activeDark);
   const form = useRef();
   const [formData, setFormData] = useState({
-    user_name: "",
-    user_email: "",
+    name: "",
+    email: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -19,37 +18,28 @@ function ContactSection() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const templateParams = {
-      from_name: formData.user_name,
-      to_name: formData.user_name,
-      message: formData.message,
-      user_email: formData.user_email,
-    };
-
-    emailjs
-      .send(
-        "service_m8ljomn",
-        "template_9vcojpw",
-        templateParams,
-        "7FMJApcE58JqK0P2h"
-      )
-      .then(
-        (result) => {
-          console.log("SUCCESS!", result.text);
-          setFormData({
-            user_name: "",
-            user_email: "",
-            message: "",
-          });
-          setSubmitted(true);
+    
+    try {
+      const response = await fetch("https://email-service-bfle.onrender.com/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData("")        
+      } else {
+        console.error("Error sending email:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+
   };
 
   return (
@@ -110,9 +100,9 @@ function ContactSection() {
               </label>
               <input
                 type="text"
-                name="user_name"
+                name="name"
                 className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
-                value={formData.user_name}
+                value={formData.name}
                 onChange={handleChange}
               />
             </div>
@@ -121,10 +111,10 @@ function ContactSection() {
                 Email:
               </label>
               <input
-                type="text"
-                name="user_email"
+                type="email"
+                name="email"
                 className=" w-full outline-none border-solid border-b-2 border-[#B5B5B5] bg-[#F8FBFB]"
-                value={formData.user_email}
+                value={formData.email}
                 onChange={handleChange}
               />
             </div>
@@ -148,7 +138,7 @@ function ContactSection() {
             </button>
             {submitted ? (
               <div className="w-full flex items-start">
-                <h4>Thank you </h4>
+                <h4>Thank you, your response has been submitted </h4>
               </div>
             ) : null}
           </form>
